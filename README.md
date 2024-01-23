@@ -16,6 +16,10 @@ This repository contains a minimal docker compose setup to run Trino Gateway (by
 
 - Cloudflare Tunnel. Please follow the steps mentioned [here](https://youtu.be/ey4u7OUAF3c) by NetworkChuck on YouTube. Get a `cloudflare access` token from Zero Trust.
 
+### Architecture (Docker Compose)
+
+![Docker Compose Architecture](assets/image-6.png)
+
 ### Running Trino Gateway Locally
 
 #### Set Cloudflare Access Token
@@ -51,7 +55,7 @@ docker-compose up -d
 
 #### Check Trino Gateway UI
 
-Access Trino Gateway UI at http://localhost:9081
+You can access Trino Gateway UI at http://localhost:9081
 
 ![Trino Gateway UI](assets/image-4.png)
 
