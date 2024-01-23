@@ -43,7 +43,7 @@ docker-compose up -d
 }
 ```
 
-![Cloudflare Tunnel](assets/image-2.png)
+![Cloudflare Tunnel](assets/image-5.png)
 
 ```bash
 ./add-trino-cluster.sh
@@ -53,7 +53,7 @@ docker-compose up -d
 
 Access Trino Gateway UI at http://localhost:9081
 
-![Trino Gateway UI](assets/image-1.png)
+![Trino Gateway UI](assets/image-4.png)
 
 #### Executing Query with Trino CLI
 
