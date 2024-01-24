@@ -53,6 +53,8 @@ services:
         ipv4_address: ${TRINO_CLUSTER_1_IP}
     ports:
       - 8081:8080
+    volumes:
+      - ${PWD}/trino/config.properties:/etc/trino/config.properties:ro
 
   trino-cluster-2:
     image: trinodb/trino:433
@@ -63,16 +65,8 @@ services:
         ipv4_address: ${TRINO_CLUSTER_2_IP}
     ports:
       - 8082:8080
-
-  cloudflare:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflare
-    hostname: cloudflare
-    networks:
-      - trino-net
-    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TOKEN}
-    environment:
-      - CLOUDFLARE_TOKEN=${CLOUDFLARE_TOKEN}
+    volumes:
+      - ${PWD}/trino/config.properties:/etc/trino/config.properties:ro
 
 volumes:
   postgres-data:
