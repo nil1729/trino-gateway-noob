@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# add trino cluster to gateway
-# make sure trino-cluster is accessible from gateway and also from client
+# adding trino cluster to gateway
 curl \
   -H "Content-Type: application/json" \
   -X POST localhost:9080/gateway/backend/modify/add \

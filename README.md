@@ -12,21 +12,11 @@ This repository contains a minimal docker compose setup to run Trino Gateway (by
 - Trino Gateway Introdution on Trino Summit 2023. [YouTube](https://youtu.be/2qwBcKmQSn0)
 - Trino Gateway (by Trino) documentation. [GitHub](https://github.com/trinodb/trino-gateway)
 
-### Pre-requisites
-
-- Cloudflare Tunnel. Please follow the steps mentioned [here](https://youtu.be/ey4u7OUAF3c) by NetworkChuck on YouTube. Get a `cloudflare access` token from Zero Trust.
-
 ### Architecture (Docker Compose)
 
-![Docker Compose Architecture](assets/image-6.png)
+![Docker Compose Architecture](assets/image-13.png)
 
 ### Running Trino Gateway Locally
-
-#### Set Cloudflare Access Token
-
-```bash
-export CLOUDFLARE_TOKEN=<cloudflare access token>
-```
 
 #### Running with Docker Compose
 
@@ -38,17 +28,6 @@ docker-compose up -d
 
 #### Add Trino Cluster to Trino Gateway
 
-```json
-{
-  "name": "trino-1",
-  "proxyTo": "{PUT YOUR TRINO COORDINATOR TUNNEL URL HERE}",
-  "active": true,
-  "routingGroup": "adhoc"
-}
-```
-
-![Cloudflare Tunnel](assets/image-5.png)
-
 ```bash
 ./add-trino-cluster.sh
 ```
@@ -57,17 +36,17 @@ docker-compose up -d
 
 You can access Trino Gateway UI at http://localhost:9081
 
-![Trino Gateway UI](assets/image-4.png)
+![Trino Gateway UI](assets/image-12.png)
 
 #### Executing Query with Trino CLI
 
-Connect to Trino Gateway with Trino CLI (You can use `localhost:9080` or `tunnel URL`)
+Connect to Trino Gateway with Trino CLI
 
 ```bash
 trino --server http://localhost:9080 --user nilanjan
 ```
 
-![Trino CLI](assets/image-3.png)
+![Trino CLI](assets/image-11.png)
 
 ---
 
