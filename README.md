@@ -14,7 +14,7 @@ This repository contains a minimal docker compose setup to run Trino Gateway (by
 
 ### Architecture (Docker Compose)
 
-![Docker Compose Architecture](assets/image-13.png)
+![Docker Compose Architecture](assets/image-14.png)
 
 ### Running Trino Gateway Locally
 
